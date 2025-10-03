@@ -12,37 +12,37 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Temapp
-build_property.ProjectDir = C:\Users\Admin\Pictures\temperatura2-main\Temapp\
+build_property.ProjectDir = C:\Users\jeiso\Documents\temperatura2\Temapp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Admin/Pictures/temperatura2-main/Temapp/App.xaml]
+[C:/Users/jeiso/Documents/temperatura2/Temapp/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Temapp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/Admin/Pictures/temperatura2-main/Temapp/AppShell.xaml]
+[C:/Users/jeiso/Documents/temperatura2/Temapp/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Temapp.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/Admin/Pictures/temperatura2-main/Temapp/MainPage.xaml]
+[C:/Users/jeiso/Documents/temperatura2/Temapp/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Temapp.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/Admin/Pictures/temperatura2-main/Temapp/Resources/Styles/Colors.xaml]
+[C:/Users/jeiso/Documents/temperatura2/Temapp/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Temapp.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/Admin/Pictures/temperatura2-main/Temapp/Resources/Styles/Styles.xaml]
+[C:/Users/jeiso/Documents/temperatura2/Temapp/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Temapp.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
