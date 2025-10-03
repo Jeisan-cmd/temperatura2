@@ -1,27 +1,29 @@
+using websimulador.Components;
 using websimulador.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Agregar servicios
-builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
+// Add services to the container.
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 
-// Puedes inyectar el servicio si lo necesitas
-builder.Services.AddSingleton<TemperaturaService>();
+// ✅ Registrar solo SupabaseService
+builder.Services.AddSingleton<SupabaseService>();
 
 var app = builder.Build();
 
+// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseRouting();
+app.UseAntiforgery();
 
-app.MapBlazorHub();
-app.MapFallbackToPage("/_Host");
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
 
 app.Run();

@@ -1,0 +1,58 @@
+@page "/sensor-chart"
+@using ChartJs.Blazor.LineChart
+@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.Common.Enums
+@using ChartJs.Blazor.Util
+@inject websimulador.Services.SupabaseService SupabaseService
+
+<h3>Gráfico de Temperatura</h3>
+
+@if (data == null)
+{
+    <p>Cargando datos...</p>
+}
+else if (chartConfig != null)
+{
+    <div style="width: 800px; height: 400px;">
+        <Chart Config="chartConfig"></Chart>
+    </div>
+}
+
+@code {
+    private List<websimulador.Models.SensorData>? data;
+    private LineConfig? chartConfig;
+
+    protected override async Task OnInitializedAsync()
+    {
+        data = await SupabaseService.GetSensorDataAsync();
+
+        chartConfig = new LineConfig
+        {
+            Options = new LineOptions
+            {
+                Responsive = true,
+                Title = new OptionsTitle
+                {
+                    Display = true,
+                    Text = "Temperatura vs Tiempo"
+                }
+            }
+        };
+
+        var dataset = new LineDataset<double>
+        {
+            Label = "Temperatura (°C)",
+            BackgroundColor = ColorUtil.FromDrawingColor(System.Drawing.Color.FromArgb(128, 255, 99, 132)),
+            BorderColor = ColorUtil.FromDrawingColor(System.Drawing.Color.FromArgb(255, 99, 132)),
+            Fill = FillingMode.Disabled
+        };
+
+        foreach (var item in data)
+        {
+            dataset.Add((double)item.Temperature);
+            chartConfig.Data.Labels.Add(item.Timestamp.ToString("HH:mm:ss"));
+        }
+
+        chartConfig.Data.Datasets.Add(dataset);
+    }
+}

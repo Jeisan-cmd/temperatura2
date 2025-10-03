@@ -2,6 +2,68 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "ChartJs.Blazor/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "3.1.0",
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/ChartJs.Blazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ChartJs.Blazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/netstandard2.1/Properties/launchSettings.json": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        },
+        "build": {
+          "buildTransitive/ChartJs.Blazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/ChartJs.Blazor.props": {}
+        }
+      },
+      "ChartJs.Blazor.Fork/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "3.1.8",
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/ChartJs.Blazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ChartJs.Blazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "contentFiles": {
+          "contentFiles/any/netstandard2.1/wwwroot/ChartJsBlazorInterop.js": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        },
+        "build": {
+          "buildTransitive/ChartJs.Blazor.Fork.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/ChartJs.Blazor.Fork.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/9.0.0": {
         "type": "package",
         "dependencies": {
@@ -113,6 +175,15 @@
           "lib/net9.0/Microsoft.AspNetCore.Metadata.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.Extensions.Configuration/9.0.0": {
@@ -709,6 +780,56 @@
     }
   },
   "libraries": {
+    "ChartJs.Blazor/1.1.0": {
+      "sha512": "MUGYzS5FSx9r17sPVRlREPWU+1mFtggFaQtGKifQg30I48tx3OEDH3JZd07r+jKwtpN/h89HVUYy3IT2FS8ZEw==",
+      "type": "package",
+      "path": "chartjs.blazor/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/ChartJs.Blazor.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/ChartJs.Blazor.props",
+        "buildTransitive/ChartJs.Blazor.props",
+        "chartjs.blazor.1.1.0.nupkg.sha512",
+        "chartjs.blazor.nuspec",
+        "content/Properties/launchSettings.json",
+        "contentFiles/any/netstandard2.1/Properties/launchSettings.json",
+        "lib/netstandard2.1/ChartJs.Blazor.dll",
+        "lib/netstandard2.1/ChartJs.Blazor.xml",
+        "staticwebassets/Chart.min.js",
+        "staticwebassets/ChartJSBlazor.css",
+        "staticwebassets/ChartJsBlazorInterop.js",
+        "staticwebassets/ChartJsBlazorInterop.js.map",
+        "staticwebassets/moment-with-locales.min.js",
+        "staticwebassets/ts/ChartJsBlazorInterop.ts",
+        "staticwebassets/ts/ChartJsInterop.ts",
+        "staticwebassets/ts/MomentJsInterop.ts",
+        "staticwebassets/ts/types/Chart.min.d.ts",
+        "staticwebassets/ts/types/moment.d.ts",
+        "staticwebassets/tsconfig.json"
+      ]
+    },
+    "ChartJs.Blazor.Fork/2.0.2": {
+      "sha512": "1aJR2uX3Al1OnWsTOIza2UV4oDZcmspOhliXQ2f9rpAOCuwT0BPbN0eFYT3Fzp5aWU9+9tfyhPlQO48UwpfKVQ==",
+      "type": "package",
+      "path": "chartjs.blazor.fork/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/ChartJs.Blazor.Fork.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/ChartJs.Blazor.Fork.props",
+        "buildTransitive/ChartJs.Blazor.Fork.props",
+        "chartjs.blazor.fork.2.0.2.nupkg.sha512",
+        "chartjs.blazor.fork.nuspec",
+        "content/wwwroot/ChartJsBlazorInterop.js",
+        "contentFiles/any/netstandard2.1/wwwroot/ChartJsBlazorInterop.js",
+        "lib/netstandard2.1/ChartJs.Blazor.dll",
+        "lib/netstandard2.1/ChartJs.Blazor.xml",
+        "staticwebassets/ChartJsBlazorInterop.js"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/9.0.0": {
       "sha512": "qDJlBC5pUQ/3o6/C6Vuo9CGKtV5TAe5AdKeHvDR2bgmw8vwPxsAy3KG5eU0i1C+iAUNbmq+iDTbiKt16f9pRiA==",
       "type": "package",
@@ -823,6 +944,75 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
         "microsoft.aspnetcore.metadata.9.0.0.nupkg.sha512",
         "microsoft.aspnetcore.metadata.nuspec"
+      ]
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "type": "package",
+      "path": "microsoft.csharp/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.3/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/uap10.0.16299/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
+        "microsoft.csharp.nuspec",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/Microsoft.CSharp.dll",
+        "ref/netcore50/Microsoft.CSharp.xml",
+        "ref/netcore50/de/Microsoft.CSharp.xml",
+        "ref/netcore50/es/Microsoft.CSharp.xml",
+        "ref/netcore50/fr/Microsoft.CSharp.xml",
+        "ref/netcore50/it/Microsoft.CSharp.xml",
+        "ref/netcore50/ja/Microsoft.CSharp.xml",
+        "ref/netcore50/ko/Microsoft.CSharp.xml",
+        "ref/netcore50/ru/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/Microsoft.CSharp.dll",
+        "ref/netstandard1.0/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
+        "ref/netstandard2.0/Microsoft.CSharp.dll",
+        "ref/netstandard2.0/Microsoft.CSharp.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/uap10.0.16299/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.Extensions.Configuration/9.0.0": {
@@ -1697,37 +1887,32 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "ChartJs.Blazor >= 1.1.0",
+      "ChartJs.Blazor.Fork >= 2.0.2",
       "Microsoft.AspNetCore.Components.Web >= 9.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 9.0.0",
       "Supabase >= 1.1.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\jeiso\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Pictures\\temperatura2-main\\websimulador\\websimulador.csproj",
+      "projectUniqueName": "C:\\Users\\jeiso\\Documents\\temperatura2\\websimulador\\websimulador.csproj",
       "projectName": "websimulador",
-      "projectPath": "C:\\Users\\Admin\\Pictures\\temperatura2-main\\websimulador\\websimulador.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Pictures\\temperatura2-main\\websimulador\\obj\\",
+      "projectPath": "C:\\Users\\jeiso\\Documents\\temperatura2\\websimulador\\websimulador.csproj",
+      "packagesPath": "C:\\Users\\jeiso\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jeiso\\Documents\\temperatura2\\websimulador\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jeiso\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -1747,12 +1932,20 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "ChartJs.Blazor": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
+          "ChartJs.Blazor.Fork": {
+            "target": "Package",
+            "version": "[2.0.2, )"
+          },
           "Microsoft.AspNetCore.Components.Web": {
             "target": "Package",
             "version": "[9.0.0, )"
@@ -1785,7 +1978,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,28 +1,29 @@
 ﻿@page "/"
 @using websimulador.Services
 @using websimulador.Models
+@inject SupabaseService SupabaseService
 
 <h3>Temperaturas Registradas</h3>
 
-@if (temperaturas == null)
+@if (data == null)
 {
     <p>Cargando...</p>
 }
 else
 {
     <ul>
-        @foreach (var t in temperaturas)
+        @foreach (var t in data)
         {
-            <li>@t.Valor °C - @t.Fecha</li>
+            <li>@t.Temperature °C - @t.Timestamp.ToString("dd/MM/yyyy HH:mm:ss")</li>
         }
     </ul>
 }
 
 @code {
-    private List<Temperatura>? temperaturas;
+    private List<SensorData>? data;
 
     protected override async Task OnInitializedAsync()
     {
-        temperaturas = await TemperaturaService.GetTemperaturasAsync();
+        data = await SupabaseService.GetSensorDataAsync();
     }
 }
