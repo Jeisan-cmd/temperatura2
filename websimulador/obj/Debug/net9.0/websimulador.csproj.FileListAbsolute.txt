@@ -50,7 +50,6 @@ C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\q
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\uxbqkokfu0-lzs9hmhw5n.gz
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\137ic4jcgc-ft71q750bt.gz
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\glbhgo999m-49ox6r4gbs.gz
-C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\um2p8t5ngd-khy4lop6wu.gz
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\86sft95erd-t1cqhe9u97.gz
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\x5nqimroo1-c2jlpeoesf.gz
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\lvzq08wfma-sejl45xvog.gz
@@ -107,3 +106,4 @@ C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\refint\websi
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\websimulador.pdb
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\websimulador.genruntimeconfig.cache
 C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\ref\websimulador.dll
+C:\Users\jeiso\Documents\temperatura2\websimulador\obj\Debug\net9.0\compressed\um2p8t5ngd-2knxvb1snm.gz

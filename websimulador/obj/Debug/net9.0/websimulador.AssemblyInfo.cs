@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("websimulador")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+388d7ace7b8b338232e55d555c06b099e37804f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6da4256e7f103fcf4a7c7fb463e12b496ca8f9c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("websimulador")]
 [assembly: System.Reflection.AssemblyTitleAttribute("websimulador")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
