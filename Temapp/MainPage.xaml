@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Temapp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="15">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="120"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot" />
+
+            <Label
+                Text="Ingresar dato de sensor"
+                Style="{StaticResource Headline}" />
+
+            <Label Text="Dispositivo" />
+            <Picker x:Name="DevicesPicker" Title="Selecciona un dispositivo" />
+
+            <Label Text="Temperatura" />
+            <Entry x:Name="TempEntry" Keyboard="Numeric" Placeholder="ej. 23.5" />
+
+            <Label Text="Humedad" />
+            <Entry x:Name="HumEntry" Keyboard="Numeric" Placeholder="ej. 45.2" />
+
+            <Button x:Name="SendBtn" Text="Enviar a Supabase" Clicked="OnSendClicked" HorizontalOptions="Fill" />
+
+            <Label x:Name="StatusLabel" Text="" TextColor="Gray" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

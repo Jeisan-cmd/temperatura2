@@ -1,0 +1,28 @@
+﻿@page "/"
+@using websimulador.Services
+@using websimulador.Models
+
+<h3>Temperaturas Registradas</h3>
+
+@if (temperaturas == null)
+{
+    <p>Cargando...</p>
+}
+else
+{
+    <ul>
+        @foreach (var t in temperaturas)
+        {
+            <li>@t.Valor °C - @t.Fecha</li>
+        }
+    </ul>
+}
+
+@code {
+    private List<Temperatura>? temperaturas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        temperaturas = await TemperaturaService.GetTemperaturasAsync();
+    }
+}
