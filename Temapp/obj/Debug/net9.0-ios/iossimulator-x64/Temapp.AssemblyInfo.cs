@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Temapp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+a3e3cf13947d2d0c07c109be98674351057a4889")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f269bffecbe6cd578a2e5ce4ee88fbc682083bab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Temapp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Temapp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

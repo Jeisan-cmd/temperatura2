@@ -1,36 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Temapp.MainPage">
+             x:Class="Temapp.MainPage"
+             BackgroundColor="#f8f9fa">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="15">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="120"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot" />
+        <VerticalStackLayout Spacing="20"
+                             Padding="20"
+                             VerticalOptions="Center">
 
-            <Label
-                Text="Ingresar dato de sensor"
-                Style="{StaticResource Headline}" />
+            <!-- Título -->
+            <Label Text="📡 Envío de Datos del Sensor"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#212529" />
 
-            <Label Text="Dispositivo" />
-            <Picker x:Name="DevicesPicker" Title="Selecciona un dispositivo" />
+            <!-- Selector de dispositivo -->
+            <Border Stroke="#dee2e6"
+                    StrokeThickness="1"
+                    BackgroundColor="White"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Dispositivo"
+                           FontSize="14"
+                           TextColor="#6c757d" />
+                    <Picker x:Name="DevicesPicker"
+                            Title="Selecciona un dispositivo"
+                            TextColor="#212529"
+                            FontSize="16" />
+                </VerticalStackLayout>
+            </Border>
 
-            <Label Text="Temperatura" />
-            <Entry x:Name="TempEntry" Keyboard="Numeric" Placeholder="ej. 23.5" />
+            <!-- Entrada de Temperatura -->
+            <Border Stroke="#dee2e6"
+                    StrokeThickness="1"
+                    BackgroundColor="White"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="🌡️ Temperatura (°C)"
+                           FontSize="14"
+                           TextColor="#6c757d" />
+                    <Entry x:Name="TempEntry"
+                           Keyboard="Numeric"
+                           Placeholder="Ej. 23.5"
+                           FontSize="16"
+                           TextColor="#212529" />
+                </VerticalStackLayout>
+            </Border>
 
-            <Label Text="Humedad" />
-            <Entry x:Name="HumEntry" Keyboard="Numeric" Placeholder="ej. 45.2" />
+            <!-- Entrada de Humedad -->
+            <Border Stroke="#dee2e6"
+                    StrokeThickness="1"
+                    BackgroundColor="White"
+                    Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="💧 Humedad (%)"
+                           FontSize="14"
+                           TextColor="#6c757d" />
+                    <Entry x:Name="HumEntry"
+                           Keyboard="Numeric"
+                           Placeholder="Ej. 65.0"
+                           FontSize="16"
+                           TextColor="#212529" />
+                </VerticalStackLayout>
+            </Border>
 
-            <Button x:Name="SendBtn" Text="Enviar a Supabase" Clicked="OnSendClicked" HorizontalOptions="Fill" />
+            <!-- Botón de envío -->
+            <Button Text="📤 Enviar Datos"
+                    Clicked="OnSendClicked"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    BackgroundColor="#0d6efd"
+                    TextColor="White"
+                    HeightRequest="50" />
 
-            <Label x:Name="StatusLabel" Text="" TextColor="Gray" />
+            <!-- Estado -->
+            <Label x:Name="StatusLabel"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="#6c757d"
+                   LineBreakMode="WordWrap" />
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

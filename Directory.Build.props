@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Configura la ruta del Android SDK -->
+    <AndroidSdkDirectory>C:\Program Files\Android\android-sdk</AndroidSdkDirectory>
+  </PropertyGroup>
+</Project>

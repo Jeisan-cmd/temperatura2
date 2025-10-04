@@ -1,64 +1,69 @@
 ﻿@page "/weather"
 @attribute [StreamRendering]
+@using websimulador.Services
+@using websimulador.Models
+@inject SupabaseService SupabaseService
 
-<PageTitle>Weather</PageTitle>
+<PageTitle>Clima del Sensor</PageTitle>
 
-<h1>Weather</h1>
+<div class="container mt-4">
+    <h1><i class="fas fa-cloud-sun"></i> Clima del Sensor Ambiental</h1>
+    <p>Datos en tiempo real desde tus dispositivos.</p>
 
-<p>This component demonstrates showing data.</p>
-
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th aria-label="Temperature in Celsius">Temp. (C)</th>
-                <th aria-label="Temperature in Farenheit">Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
+    @if (sensorData == null)
+    {
+        <div class="alert alert-info">
+            <i class="fas fa-spinner fa-spin"></i> Cargando lecturas del sensor...
+        </div>
+    }
+    else if (sensorData.Count == 0)
+    {
+        <div class="alert alert-warning">
+            <i class="fas fa-exclamation-circle"></i> No hay datos registrados aún.
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var reading in sensorData)
             {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm h-100 border-0">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-thermometer-half text-danger" style="font-size: 2.2rem;"></i>
+                                <div class="fs-3 fw-bold text-danger mt-2">
+                                    @reading.Temperature.ToString("0.0")<small>°C</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-tint text-primary" style="font-size: 2.2rem;"></i>
+                                <div class="fs-3 fw-bold text-primary mt-2">
+                                    @reading.Humidity.ToString("0.0")<small>%</small>
+                                </div>
+                            </div>
+                            <small class="text-muted">
+                                @reading.Timestamp.ToString("dd/MM/yyyy HH:mm")
+                            </small>
+                            <div class="mt-2">
+                                <small class="text-muted">
+                                    <i class="fas fa-microchip"></i> @reading.DeviceId.ToString().Substring(0, 8)...
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
-}
+        </div>
+    }
+</div>
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private List<SensorData>? sensorData;
 
     protected override async Task OnInitializedAsync()
     {
-        // Simulate asynchronous loading to demonstrate streaming rendering
-        await Task.Delay(500);
-
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
-        }).ToArray();
-    }
-
-    private class WeatherForecast
-    {
-        public DateOnly Date { get; set; }
-        public int TemperatureC { get; set; }
-        public string? Summary { get; set; }
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        await Task.Delay(300);
+        sensorData = await SupabaseService.GetSensorDataAsync();
     }
 }
